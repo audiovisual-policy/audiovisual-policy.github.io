@@ -115,11 +115,72 @@
         the eraser along the shape. Watch the below <span style="color:#e0218a">video</span> for details of the task
         and
         ablations.
-        <div style="text-align: center; justify-content: center; margin-top:15px; margin-bottom: 20px;">
-            <video controls style="width: 80%"><source src="videos/tasks/wipe-summary-compressed.mp4" type="video/mp4"> </video>
+        <div class="box alt" style="margin-top:1em; margin-bottom: 1em;">
+            <h4 style="color:#e0218a">ManiWAV:</h4>
+            <div class="row 50% uniform" style="width: 100%;">
+                <div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+                    <span class="image fit" style="margin-bottom: 0.5em;">
+                        <video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;"><source src="videos/tasks/wipe/ours.mp4" type="video/mp4"> </video>
+                    </span>
+                    In distribution
+                </div>
+
+                <div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+                    <span class="image fit" style="margin-bottom: 0.5em;">
+                        <video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;"><source src="videos/tasks/wipe/ours-shape.mp4" type="video/mp4"> </video>
+                    </span>
+                    Unseen shape (e.g. star)
+                </div>
+
+                <div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+                    <span class="image fit" style="margin-bottom: 0.5em;">
+                        <video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;"><source src="videos/tasks/wipe/ours-height.mp4" type="video/mp4"> </video>
+                    </span>
+                    Unseen table height
+                </div>
+
+                <div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+                    <span class="image fit" style="margin-bottom: 0.5em;">
+                        <video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;"><source src="videos/tasks/wipe/ours-eraser.mp4" type="video/mp4"> </video>
+                    </span>
+                    Unseen eraser
+                </div>
+            </div>
         </div>
 
-        <br>
+        <div class="box alt" style="margin-top:1em; margin-bottom: 1em;">
+            <h4 style="color:#e0218a">Baselines:</h4>
+            <div class="row 50% uniform" style="width: 100%;">
+                <div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+                    <span class="image fit" style="margin-bottom: 0.5em;">
+                        <video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;"><source src="videos/tasks/wipe/vision-float-1.mp4" type="video/mp4"> </video>
+                    </span>
+                    Vision only: Eraser fails to get into contact with the whiteboard and <span style="color:red">floats</span>.
+                </div>
+
+                <div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+                    <span class="image fit" style="margin-bottom: 0.5em;">
+                        <video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;"><source src="videos/tasks/wipe/vision-float-2.mp4" type="video/mp4"> </video>
+                    </span>
+                    Vision only: Eraser does not get into contact with the whiteboard and <span style="color:red">floats</span>.
+                </div>
+
+                <div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+                    <span class="image fit" style="margin-bottom: 0.5em;">
+                        <video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;"><source src="videos/tasks/wipe/mlp-1.mp4" type="video/mp4"> </video>
+                    </span>
+                    MLP fusion: Policy <span style="color:red">terminates early</span> before shape is completely wiped off.
+                </div>
+
+                <div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+                    <span class="image fit" style="margin-bottom: 0.5em;">
+                        <video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;"><source src="videos/tasks/wipe/wo-aug-1.mp4" type="video/mp4"> </video>
+                    </span>
+                    No noise augmentation: Robot <span style="color:red">presses too hard</span> on the whiteboard, causing gripper to bend.
+                </div>
+            </div>
+        </div>
+
         <p><span style="color:#e0218a">Key Findings:</span>
         <ul style="margin-top:-1.5em">
             <li>Incorporating contact audio as additional source of information improves robustness and
@@ -134,78 +195,83 @@
 
         <h4> (b) Flipping Bagel 🥯</h4>
         The robot is tasked to flip a bagel in a pan from facing down to facing upward using a spatula. To perform
-        this
-        task successfully, the robot needs to sense and switch between different contact modes -- precisely insert
-        the
-        spatula between the bagel and the pan, maintain the contact while sliding, and start to tilt up the spatula
-        when
-        the bagel is in contact with the edge of the pan. Watch the below <span style="color:#e0218a">video</span>
-        for
-        details of the task and ablations.
-        <div style="text-align: center; justify-content: center; margin-top:15px; margin-bottom: 20px;">
-            <video controls style="width: 80%"><source src="videos/tasks/flip-summary-compressed.mp4" type="video/mp4"> </video>
+        this task successfully, the robot needs to sense and switch between different contact modes -- precisely
+        insert the spatula between the bagel and the pan, maintain the contact while sliding, and start to tilt up
+        the spatula when the bagel is in contact with the edge of the pan.
+        <!-- <div style="text-align: center; justify-content: center; margin-top:15px; margin-bottom: 20px;">
+            <video controls style="width: 80%">
+                <source src="videos/tasks/flip-summary-compressed.mp4" type="video/mp4">
+            </video>
+        </div> -->
+
+        <div class="box alt" style="margin-top:1em; margin-bottom: 1em;">
+            <h4 style="color:#e0218a">ManiWAV:</h4>
+            <div class="row 50% uniform" style="width: 100%;">
+                <div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+                    <span class="image fit" style="margin-bottom: 0.5em;">
+                        <video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;"><source src="videos/tasks/flip/ours-1.mp4" type="video/mp4"> </video>
+                    </span>
+                    In distribution
+                </div>
+
+                <div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+                    <span class="image fit" style="margin-bottom: 0.5em;">
+                        <video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;"><source src="videos/tasks/flip/ours-2.mp4" type="video/mp4"> </video>
+                    </span>
+                    In distribution
+                </div>
+
+                <div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+                    <span class="image fit" style="margin-bottom: 0.5em;">
+                        <video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;"><source src="videos/tasks/flip/ours-height.mp4" type="video/mp4"> </video>
+                    </span>
+                    Unseen table height
+                </div>
+
+                <div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+                    <span class="image fit" style="margin-bottom: 0.5em;">
+                        <video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;"><source src="videos/tasks/flip/ours-noise.mp4" type="video/mp4"> </video>
+                    </span>
+                    Noise perturbation
+                </div>
+            </div>
         </div>
 
-        <br>
-        <p><span style="color:#e0218a">Key Findings:</span>
-        <ul style="margin-top:-1.5em">
-            <li>Action diffusion yields better behavior comparing to MLP policy model. </li>
-            <li>Training a transformer audio encoder from scratch yields better performance comparing to using a
-                CNN-based encoder. </li>
-            <li>In-the-wild data enables generalization to unseen in-the-wild environments. </li>
-        </ul>
-        </p>
+        <div class="box alt" style="margin-top:1em; margin-bottom: 1em;">
+            <h4 style="color:#e0218a">Baselines:</h4>
+            <div class="row 50% uniform" style="width: 100%;">
+                <div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+                    <span class="image fit" style="margin-bottom: 0.5em;">
+                        <video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;"><source src="videos/tasks/flip/vision-1.mp4" type="video/mp4"> </video>
+                    </span>
+                    Vision only: Spatula <span style="color:red">pokes</span> on the side of the bagel.
+                </div>
 
-        <br>
-        <h4> (c) Pouring 🎲 </h4>
-        The robot is tasked to pick up the white cup and pour dice out to the pink cup if the white cup is not
-        empty.
-        When finish pouring, the robot needs to place the empty cup down to a designated location.
-        The challenge of the task is that the robot cannot observe whether there are dice in the cup or not given
-        the
-        camera view point both before and after the pouring action, therefore it needs to leverage feedback from
-        vibrations of objects inside the cup. Watch the below <span style="color:#e0218a">video</span> for details
-        of
-        the task and ablations.
-        <div style="text-align: center; justify-content: center; margin-top:15px; margin-bottom: 20px;">
-            <video controls style="width: 80%"><source src="videos/tasks/pour-summary-compressed.mp4" type="video/mp4"> </video>
+                <div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+                    <span class="image fit" style="margin-bottom: 0.5em;">
+                        <video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;"><source src="videos/tasks/flip/vision-2.mp4" type="video/mp4"> </video>
+                    </span>
+                    Vision only: Robot <span style="color:red">loses contact</span> with the bagel before it's flipped.
+                </div>
+
+                <div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+                    <span class="image fit" style="margin-bottom: 0.5em;">
+                        <video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;"><source src="videos/tasks/flip/resnet.mp4" type="video/mp4"> </video>
+                    </span>
+                    ResNet: Policy trained with a ResNet18 andio encoder fails due to <span style="color:red">spatula displacement</span>.
+                </div>
+
+                <div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+                    <span class="image fit" style="margin-bottom: 0.5em;">
+                        <video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;"><source src="videos/tasks/flip/mlp-policy.mp4" type="video/mp4"> </video>
+                    </span>
+                    MLP policy: Using MLP instead of Diffusion Policy yields <span style="color:red">bad flip</span> sometimes.
+                </div>
+            </div>
         </div>
 
-        <br>
-        <p><span style="color:#e0218a">Key Findings:</span>
-        <ul style="margin-top:-1.5em">
-            <li>Audio can provide critical state information beyond visual observations. </li>
-            <li>Policy performance is sensitive to audio history length, either too short or too long will hurt
-                performance. </li>
-        </ul>
-        </p>
-
-        <br>
-
-        <h4> (d) Taping Wires with Velcro Tape ➰ </h4>
-        The robot is tasked to choose the 'hook' tape from several tapes (either 'hook' or 'loop') and strap wires
-        by
-        attaching the 'hook' tape to a 'loop' tape underneath the wires. The challenge of the task is that the
-        difference between 'loop' and 'hook' tape are not observable with vision, but the subtle difference in
-        surface
-        material can generate different sounds when 'sliding' the gripper finger against the tape. Watch the below
-        <span style="color:#e0218a">video</span> for details of the task and ablations.
-        <div style="text-align: center; justify-content: center; margin-top:15px; margin-bottom: 20px;">
-            <video controls style="width: 80%"><source src="videos/tasks/tape-summary-compressed.mp4" type="video/mp4"> </video>
-        </div>
-
-        <br>
-        <p><span style="color:#e0218a">Key Findings:</span>
-        <ul style="margin-top:-1.5em">
-            <li>Contact microphone is sufficiently sensitive to different surface materials.</li>
-            <li>Training-time noise augmentation is more effective than test-time noise reduction.</li>
-        </ul>
-        </p>
-
-        <hr>
-        <h3>More Results</h3>
-        <h4>In-the-Wild Generalization</h4>
         <div class="box alt" style="margin-bottom: 1em;">
+            <h4 style="color:#e0218a">In-the-Wild Generalization:</h4>
             <div class="row 50% uniform" style="width: 100%;">
                 <div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
                     <span class="image fit" style="margin-bottom: 0.5em;">
@@ -247,8 +313,68 @@
                 </div>
             </div>
         </div>
+
+        <p><span style="color:#e0218a">Key Findings:</span>
+        <ul style="margin-top:-1.5em">
+            <li>Action diffusion yields better behavior comparing to MLP policy model. </li>
+            <li>Training a transformer audio encoder from scratch yields better performance comparing to using a
+                CNN-based encoder. </li>
+            <li>In-the-wild data enables generalization to unseen in-the-wild environments. </li>
+        </ul>
+        </p>
+
+        <br>
+        <h4> (c) Pouring 🎲 </h4>
+        The robot is tasked to pick up the white cup and pour dice out to the pink cup if the white cup is not
+        empty.
+        When finish pouring, the robot needs to place the empty cup down to a designated location.
+        The challenge of the task is that the robot cannot observe whether there are dice in the cup or not given
+        the
+        camera view point both before and after the pouring action, therefore it needs to leverage feedback from
+        vibrations of objects inside the cup. Watch the below <span style="color:#e0218a">video</span> for details
+        of
+        the task and ablations.
+        <div style="text-align: center; justify-content: center; margin-top:15px; margin-bottom: 20px;">
+            <video controls style="width: 80%">
+                <source src="videos/tasks/pour-summary-compressed.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <br>
+        <p><span style="color:#e0218a">Key Findings:</span>
+        <ul style="margin-top:-1.5em">
+            <li>Audio can provide critical state information beyond visual observations. </li>
+            <li>Policy performance is sensitive to audio history length, either too short or too long will hurt
+                performance. </li>
+        </ul>
+        </p>
+
         <br>
 
+        <h4> (d) Taping Wires with Velcro Tape ➰ </h4>
+        The robot is tasked to choose the 'hook' tape from several tapes (either 'hook' or 'loop') and strap wires
+        by
+        attaching the 'hook' tape to a 'loop' tape underneath the wires. The challenge of the task is that the
+        difference between 'loop' and 'hook' tape are not observable with vision, but the subtle difference in
+        surface
+        material can generate different sounds when 'sliding' the gripper finger against the tape. Watch the below
+        <span style="color:#e0218a">video</span> for details of the task and ablations.
+        <div style="text-align: center; justify-content: center; margin-top:15px; margin-bottom: 20px;">
+            <video controls style="width: 80%">
+                <source src="videos/tasks/tape-summary-compressed.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <br>
+        <p><span style="color:#e0218a">Key Findings:</span>
+        <ul style="margin-top:-1.5em">
+            <li>Contact microphone is sufficiently sensitive to different surface materials.</li>
+            <li>Training-time noise augmentation is more effective than test-time noise reduction.</li>
+        </ul>
+        </p>
+
+        <hr>
+        <h3>More Results</h3>
         <h4>Attention Map Visualization</h4>
         <div class="box alt" style="margin-bottom: 1em;">
             <div class="row 50% uniform" style="width: 100%;">
